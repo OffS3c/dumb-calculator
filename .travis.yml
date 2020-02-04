@@ -6,10 +6,8 @@ node_js:
 
 before_install:
   - echo "Install Stage Initiated at `date`"
-  - pip install --upgrade pip
   - bash .travis-aws-login.sh
-  - pip install --upgrade awscli
-  - npm install -g npm
+  - sudo pip install --upgrade awscli
 
 script:
   - echo "Pre-build Stage Initiated at `date`"
