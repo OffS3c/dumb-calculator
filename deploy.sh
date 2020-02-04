@@ -1,4 +1,5 @@
 #!/bin/bash
 
 aws s3 sync ./build $S3_BUCKET --acl public-read
-echo "DONE at `date`"
+echo "Deployemnt complete at `date`"
+echo "ALL DONE at `date`"
