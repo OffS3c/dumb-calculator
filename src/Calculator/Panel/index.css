@@ -59,14 +59,6 @@
   background-color: #727272;
   color: #000;
 }
-.c-calculator__button abbr {
-  text-decoration: none;
-}
-
-.c-calculator__button--double {
-  grid-column: span 2;
-  border-radius: 2.5em;
-}
 
 .c-calculator__button--function {
   background-color: #a6a6a6;
