@@ -1,0 +1,30 @@
+# using image nodejs 13
+FROM node:13
+
+# update and upgrade distro
+RUN apt-get update
+RUN apt-get full-upgrade -y
+
+# upgrade npm
+RUN npm i -g npm
+
+# install create-react-app module
+RUN npm i -g create-react-app
+
+# switch working directory
+WORKDIR /app
+
+# copy project dependancies
+COPY package*.json ./
+
+# install dependancies
+RUN npm i
+
+# copy source files
+COPY ./ ./
+
+# test app
+RUN CI=true npm run test -- --coverage
+
+# start dev server
+CMD [ "npm", "run", "start" ]
