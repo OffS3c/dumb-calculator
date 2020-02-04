@@ -1,12 +1,11 @@
-
- .c-calculator {
+.c-calculator-wrapper {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(7, 1fr);
+  grid-template-columns: 1fr;
+  grid-template-rows: 30% 70%;
   grid-gap: 0.5em;
   width: 20em;
-  height: 33.88em;
-  padding: 1em;
+  height: 34.88em;
+  padding: 2em 1em;
   border-radius: 1em;
   background-color: #000;
   color: #fff;
@@ -14,20 +13,22 @@
   font-weight: 200;
 }
 
-.c-calculator__header,
+.c-calculator-keyboard {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+}
+
 .c-calculator__body {
   grid-column: span 4;
 }
 
-.c-calculator__header {
-  grid-row: span 2;
-  overflow: hidden;
-  display: grid;
-  -webkit-box-pack: end;
-          justify-content: end;
-  -webkit-box-align: end;
-          align-items: end;
+.c-calculator__display {
+  display: inline-grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto;
 }
+
 
 .c-calculator__body {
   grid-row: span 5;
@@ -38,8 +39,18 @@
 }
 
 .c-calculator__value {
-  font-size: 4.5em;
+  font-size: 2.5em;
   text-align: right;
+}
+
+
+.calculator__result {
+  -webkit-box-pack: end;
+          justify-content: end;
+  -webkit-box-align: end;
+          align-items: end;
+          color: #727272;
+          font-size: 4.5em;
 }
 
 .c-calculator__button {
@@ -55,7 +66,8 @@
   transition: background-color 0.2s ease-in, color 0.2s ease-in;
   will-change: background-color, color;
 }
-.c-calculator__button:active, .c-calculator__button.is-selected {
+.c-calculator__button:active,
+.c-calculator__button.is-selected {
   background-color: #727272;
   color: #000;
 }
@@ -64,14 +76,16 @@
   background-color: #a6a6a6;
   color: #000;
 }
-.c-calculator__button--function:active, .c-calculator__button--function.is-selected {
+.c-calculator__button--function:active,
+.c-calculator__button--function.is-selected {
   background-color: #727272;
 }
 
 .c-calculator__button--operator {
   background-color: #ff9403;
 }
-.c-calculator__button--operator:active, .c-calculator__button--operator.is-selected {
+.c-calculator__button--operator:active,
+.c-calculator__button--operator.is-selected {
   background-color: #fff;
   color: #ff9403;
 }
