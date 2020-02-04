@@ -1,10 +1,17 @@
-import React, { Component } from 'react';
-import './index.css';
+import React, { Component } from "react";
+import History from "./History";
+import Panel from "./Panel";
+import "./index.css";
 
 export default class Calculator extends Component {
-  render () {
+  render() {
     return (
-      <div className="calc-main"></div>
+      <div className="calc-main">
+        <div  className="calc-wrapper">
+          <Panel />
+          <History />
+        </div>
+      </div>
     );
   }
 }
