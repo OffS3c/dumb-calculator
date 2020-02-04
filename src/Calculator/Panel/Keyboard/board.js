@@ -144,7 +144,7 @@ const board = [
       character: '.',
       type: 'number',
       value: '.',
-      classes: "c-calculator__button",
+      classes: "c-calculator__button c-calculator__button--function",
 
     },
     {
