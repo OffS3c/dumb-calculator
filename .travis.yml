@@ -1,0 +1,30 @@
+sudo: required
+
+language: node_js
+node_js:
+  - "12"
+
+before_install:
+  - echo "Install Stage Initiated at `date`"
+  - pip install --upgrade pip
+  - bash .travis-aws-login.sh
+  - pip install --upgrade awscli
+  - npm install -g npm
+
+script:
+  - echo "Pre-build Stage Initiated at `date`"
+  - rm -rf build node_modules
+  - mkdir -m 777 build
+  - npm install
+  - CI=true npm run test -- --coverage
+  - echo "Build Stage Initiated at `date`"
+  - npm run build
+
+after_success:
+  - echo "Deployment started at `date`"
+
+deploy:
+  provider: script
+  script: bash deploy.sh
+  on:
+    branch: master
