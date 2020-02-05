@@ -1,13 +1,13 @@
 
 const Log = {
   info: whatToLog => {
-    console.info(`info: | ${whatToLog}`);
+    console.info(whatToLog);
   },
   debug: whatToLog => {
-    console.log(`debug: | ${whatToLog}`);
+    console.log(whatToLog);
   },
   error: whatToLog => {
-    console.error(`error: | ${whatToLog}`);
+    console.error(whatToLog);
   }
 };
 
